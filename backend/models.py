@@ -1,4 +1,5 @@
 import datetime
+from werkzeug.security import check_password_hash
 
 
 class User:
