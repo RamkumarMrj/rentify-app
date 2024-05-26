@@ -1,0 +1,8 @@
+<div *ngIf="property">
+    <h2>{{ property.place }}</h2>
+    <p>{{ property.description }}</p>
+    <p>Likes: {{ property.likes }}</p>
+    <button (click)="onLike()">Like</button>
+    <button (click)="onInterested()">Interested</button>
+  </div>
+  
