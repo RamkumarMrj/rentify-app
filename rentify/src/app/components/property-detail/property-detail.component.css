@@ -1,0 +1,25 @@
+.property-detail-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-detail-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .property-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .property-detail img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .property-detail-info {
+    margin-top: 20px;
+  }
+  

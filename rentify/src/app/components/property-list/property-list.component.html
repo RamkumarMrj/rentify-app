@@ -1,9 +1,14 @@
-<div *ngFor="let property of properties">
-    <h3>{{ property.place }}</h3>
-    <p>{{ property.description }}</p>
-    <p>Likes: {{ property.likes }}</p>
-    <button *ngIf="property.id" (click)="onLike(property.id)">Like</button>
-    <button *ngIf="property.id" (click)="onInterested(property.id)">Interested</button>
-    <button *ngIf="property.id" (click)="onDelete(property.id)">Delete</button>
+<div class="property-list-container" *ngFor="let property of properties">
+  <h2>Properties</h2>
+  <div class="property-item" *ngFor="let property of properties">
+    <img [src]="property.image" alt="Property">
+    <div class="property-detail-info">
+      <h3>{{ property.place }}</h3>
+      <p>{{ property.description }}</p>
+      <p>Likes: {{ property.likes }}</p>
+      <button *ngIf="property.id" (click)="onLike(property.id)">Like</button>
+      <button *ngIf="property.id" (click)="onInterested(property.id)">Interested</button>
+      <button *ngIf="property.id" (click)="onDelete(property.id)">Delete</button>
+    </div>
   </div>
-  
+</div>

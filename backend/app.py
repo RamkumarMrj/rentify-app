@@ -180,7 +180,7 @@ def create_property():
 
 # Get Properties all (GET)
 @app.route("/api/properties", methods=["GET"])
-@jwt_required()
+# @jwt_required()
 def get_properties():
     try:
         all_properties = properties_collection.find()

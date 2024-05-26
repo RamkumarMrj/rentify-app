@@ -1,0 +1,27 @@
+.property-list-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-list-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .property-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .property-item img {
+    max-width: 150px;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .property-item-info {
+    flex: 1;
+  }
+  

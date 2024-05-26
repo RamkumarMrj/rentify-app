@@ -8,6 +8,7 @@ import { PropertyDetailComponent } from './components/property-detail/property-d
 import { PropertyListComponent } from './components/property-list/property-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
