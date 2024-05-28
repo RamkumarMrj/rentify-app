@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Property } from '../models/property';
@@ -12,29 +12,64 @@ export class PropertyService {
 
   constructor(private http: HttpClient) { }
 
-  createProperty(property: Property): Observable<any> {
-    return this.http.post(`${this.apiUrl}/properties`, property);
-  }
-
   getProperties(): Observable<{ properties: Property[] }> {
-    return this.http.get<{ properties: Property[] }>(`${this.apiUrl}/properties`);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}` // Assuming you store the token in localStorage
+      })
+    };
+    console.log(httpOptions);
+    return this.http.get<{ properties: Property[] }>(`${this.apiUrl}/properties`, httpOptions);
   }
 
   getProperty(id: string): Observable<Property> {
-    return this.http.get<Property>(`${this.apiUrl}/property/${id}`);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}` // Assuming you store the token in localStorage
+      })
+    };
+    return this.http.get<Property>(`${this.apiUrl}/property/${id}`, httpOptions);
   }
 
+  createProperty(property: Property): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}` // Assuming you store the token in localStorage
+      })
+    };
+    return this.http.post(`${this.apiUrl}/properties`, property, httpOptions);
+  }
+  
+  deleteProperty(id: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}` // Assuming you store the token in localStorage
+      })
+    };
+    return this.http.delete<any>(`${this.apiUrl}/property/${id}`, httpOptions);
+  }
+  
   likeProperty(id: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/property/${id}/like`, {});
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}` // Assuming you store the token in localStorage
+      })
+    };
+    return this.http.post<any>(`${this.apiUrl}/property/${id}/like`, {}, httpOptions);
   }
 
   expressInterest(id: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/property/${id}/interest`, {});
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+      })
+    };
+    return this.http.post<any>(`${this.apiUrl}/property/${id}/interest`, {}, httpOptions);
   }
-
-  deleteProperty(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/property/${id}`);
-  }
-
-  
 }

@@ -1,4 +1,4 @@
-<div class="register-container">
+<div class="register-container container">
     <h2>Register</h2>
     <form (ngSubmit)="register()">
       <label>
@@ -13,9 +13,17 @@
         Email:
         <input [(ngModel)]="user.email" name="email" type="email" required />
       </label>
-      <label>
+      <!-- <label>
         User Type:
         <input [(ngModel)]="user.user_type" name="userType" required />
+      </label> -->
+      <label>
+        User Type:
+        <select [(ngModel)]="user.user_type" name="userType" required>
+          <option value="" disabled selected>Select User Type</option>
+          <option value="seller">Seller</option>
+          <option value="buyer">Buyer</option>
+        </select>
       </label>
       <label>
         Phone Number:

@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Create Property</h2>
+    <form (ngSubmit)="createProperty()">
+      <label>
+        Place:
+        <input [(ngModel)]="property.place" name="place" required />
+      </label>
+      <label>
+        Area:
+        <input [(ngModel)]="property.area" name="area" type="number" required />
+      </label>
+      <label>
+        Price:
+        <input [(ngModel)]="property.price" name="price" type="number" required />
+      </label>
+      <label>
+        Bedrooms:
+        <input [(ngModel)]="property.bedrooms" name="bedrooms" type="number" required />
+      </label>
+      <label>
+        Bathrooms:
+        <input [(ngModel)]="property.bathrooms" name="bathrooms" type="number" required />
+      </label>
+      <label>
+        Amenities:
+        <input [(ngModel)]="property.amenities" name="amenities" required />
+      </label>
+      <label>
+        Description:
+        <textarea [(ngModel)]="property.description" name="description" required></textarea>
+      </label>
+      <label>
+        Image URL:
+        <input [(ngModel)]="property.image" name="image" required />
+      </label>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+  

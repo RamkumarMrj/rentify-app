@@ -1,16 +1,17 @@
 import datetime
-from werkzeug.security import check_password_hash
+# from werkzeug.security import check_password_hash
 
 
 class User:
-    def __init__(self, id, first_name, email, user_type, password, last_name=None, phone_number=None,):
+    def __init__(self, id, first_name, email, user_type, password, last_name=None, phone_number=None, _id=None):
         self.id = id
+        self._id = _id
         self.first_name = first_name
-        self.last_name = last_name
         self.email = email
-        self.phone_number = phone_number
         self.user_type = user_type
         self.password = password
+        self.last_name = last_name
+        self.phone_number = phone_number
 
     def verify_password(self, password):
         return check_password_hash(self.password, password)

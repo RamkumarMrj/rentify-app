@@ -18,7 +18,7 @@ export class LoginComponent {
     this.userService.login({ email: this.email, password: this.password, user_type: this.user_type }).subscribe(
       (response) => {
         localStorage.setItem('access_token', response.access_token);
-        this.router.navigate(['/properties']);
+        this.router.navigate(['/user']);
       },
       (error) => {
         console.error('Login failed', error);

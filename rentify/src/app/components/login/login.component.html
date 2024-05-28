@@ -1,19 +1,20 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="login()">
-      <label>
-        Email:
-        <input [(ngModel)]="email" name="email" type="email" required />
-      </label>
-      <label>
-        Password:
-        <input [(ngModel)]="password" name="password" type="password" required />
-      </label>
-      <label>
-        User Type:
-        <input [(ngModel)]="user_type" name="userType" required />
-      </label>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-  
+<div class="login-container container">
+  <h2>Login</h2>
+  <form (ngSubmit)="login()">
+    <label>
+      Email:
+      <input [(ngModel)]="email" name="email" type="email" required />
+    </label>
+    <label>
+      Password:
+      <input [(ngModel)]="password" name="password" type="password" required />
+    </label>
+    <label for="userType">User Type:</label>
+    <select [(ngModel)]="user_type" name="userType" id="userType" required>
+      <option value="" disabled selected>Select User Type</option>
+      <option value="seller">Seller</option>
+      <option value="buyer">Buyer</option>
+    </select>
+    <button type="submit">Login</button>
+  </form>
+</div>

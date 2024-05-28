@@ -1,0 +1,36 @@
+<div class="user-details-container">
+    <h2>User Details</h2>
+  
+    <div *ngIf="user; else noUser">
+      <div class="user-detail">
+        <label>First Name:</label>
+        <span>{{ user.first_name }}</span>
+      </div>
+  
+      <div class="user-detail">
+        <label>Last Name:</label>
+        <span>{{ user.last_name }}</span>
+      </div>
+  
+      <div class="user-detail">
+        <label>Email:</label>
+        <span>{{ user.email }}</span>
+      </div>
+  
+      <div class="user-detail">
+        <label>Phone Number:</label>
+        <span>{{ user.phone_number }}</span>
+      </div>
+  
+      <div class="user-detail">
+        <label>User Type:</label>
+        <span>{{ user.user_type }}</span>
+      </div>
+  
+    </div>
+  
+    <ng-template #noUser>
+      <p>No user details available.</p>
+    </ng-template>
+  </div>
+  

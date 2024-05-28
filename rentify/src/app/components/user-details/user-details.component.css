@@ -1,0 +1,35 @@
+.user-details-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-details-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-detail label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-detail span {
+    color: #555;
+  }
+  
+  .user-details-container p {
+    text-align: center;
+    color: #999;
+  }
+  

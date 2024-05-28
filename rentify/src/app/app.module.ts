@@ -7,8 +7,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { PropertyDetailComponent } from './components/property-detail/property-detail.component';
 import { PropertyListComponent } from './components/property-list/property-list.component';
 import { LoginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { PropertyCreateComponent } from './components/property-create/property-create.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     LoginComponent,
     RegisterComponent,
     PropertyDetailComponent,
-    PropertyListComponent
+    PropertyListComponent,
+    PropertyCreateComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

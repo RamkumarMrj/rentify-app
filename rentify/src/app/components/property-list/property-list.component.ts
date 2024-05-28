@@ -36,8 +36,10 @@ export class PropertyListComponent implements OnInit {
   }
 
   onDelete(id: string): void {
-    this.propertyService.deleteProperty(id).subscribe(() => {
-      this.properties = this.properties.filter(property => property.id !== id);
-    });
+    if (id) {
+      this.propertyService.deleteProperty(id).subscribe(() => {
+        this.properties = this.properties.filter(property => property.id !== id);
+      });
+    }
   }
 }

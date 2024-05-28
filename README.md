@@ -1,3 +1,15 @@
+https://github.com/RamkumarMrj/rentify-app
+
+
+![alt text](<Screenshot from 2024-05-26 23-49-35.png>)
+
+![alt text](<Screenshot from 2024-05-26 23-50-21.png>)
+
+![alt text](<Screenshot from 2024-05-26 23-51-56.png>)
+
+![alt text](image-1.png)
+
+
 ## 1. User Model:
 
 ```

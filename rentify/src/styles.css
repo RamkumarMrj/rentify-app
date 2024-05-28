@@ -38,6 +38,15 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
+
+  .container {
+      max-width: 70%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+  }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
