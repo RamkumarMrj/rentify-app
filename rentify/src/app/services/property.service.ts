@@ -8,7 +8,8 @@ import { Property } from '../models/property';
 })
 export class PropertyService {
 
-  private apiUrl = 'http://localhost:5000/api';
+  // private apiUrl = 'http://localhost:5000/api';
+  private apiUrl = 'http://ec2-13-201-67-46.ap-south-1.compute.amazonaws.com:5000/api'
 
   constructor(private http: HttpClient) { }
 

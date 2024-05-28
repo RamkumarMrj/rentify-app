@@ -1,17 +1,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:5000/api';
+  // private apiUrl = 'http://localhost:5000/api';
+  private apiUrl = 'http://ec2-13-201-67-46.ap-south-1.compute.amazonaws.com:5000/api'
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   register(user: User): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, user);
@@ -22,8 +24,10 @@ export class UserService {
   }
 
   getUserDetails(): Observable<User> {
-    const token = localStorage.getItem('access_token');
-    console.log('Token from localStorage:', token);
+    let token: string | null = null;
+    if (isPlatformBrowser(this.platformId)) {
+      token = localStorage.getItem('access_token');
+    }
 
     if (!token) {
       console.error('No token found in localStorage');

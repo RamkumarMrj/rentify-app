@@ -8,7 +8,7 @@ import { PropertyCreateComponent } from './components/property-create/property-c
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/properties', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'properties', component: PropertyListComponent },
   { path: 'properties/create', component: PropertyCreateComponent },
   { path: 'properties/:id', component: PropertyDetailComponent },
